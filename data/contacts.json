@@ -1,0 +1,44 @@
+[
+  {
+    "full_name": "Peter Joseph",
+    "phone_number": "555-5555",
+    "email": "schmitz@company.com",
+    "tags": "sales, scuba",
+    "id": 1
+  },
+  {
+    "full_name": "Percy Jackson",
+    "phone_number": "123-532-5432",
+    "email": "pjack@sa.com",
+    "tags": "sales",
+    "id": 3
+  },
+  {
+    "full_name": "Test McGee",
+    "phone_number": "324-523-1231",
+    "email": "test@aol.com",
+    "tags": "marketing, sales, CEO",
+    "id": 4
+  },
+  {
+    "full_name": "John Jacob",
+    "phone_number": "234-324-5432",
+    "email": "jj@jj.com",
+    "tags": "CEO",
+    "id": 5
+  },
+  {
+    "full_name": "Janger Kular",
+    "phone_number": "123-446-7853",
+    "email": "jk@jk.com",
+    "tags": "marketing",
+    "id": 6
+  },
+  {
+    "full_name": "J Test",
+    "phone_number": "123",
+    "email": "jt@test.com",
+    "tags": "marketing",
+    "id": 7
+  }
+]

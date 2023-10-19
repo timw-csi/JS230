@@ -1,0 +1,40 @@
+li {
+  display: inline-block;
+}
+
+.modifyButtons {
+  box-sizing: border-box;
+  margin: 20px 10px;
+}
+
+.modifyButtons a {
+  box-sizing: border-box;
+  margin: 5px 20px;
+  padding: 5px 5px;
+  border: 1px solid purple;
+}
+
+.tags a {
+  margin: 5px 5px;
+}
+/* dt {
+  display: inline-block;
+}
+
+dd {
+  display: inline-block;
+} */
+/* li {
+  width: fit-content;
+}
+dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+dt {
+  width: 33%;
+}
+dd {
+  margin-left: auto;
+  width: 66%;
+} */

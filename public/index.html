@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/appStyle.css">
+  <title>Contact Manager</title>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/handlebars.js"></script>
+  <script src="/javascripts/app.js"></script>
+  <script id="contactPartial" type="text/x-handlebars">
+    <li>
+      <fieldset>
+        <h2>{{full_name}}</h2>
+        <dl>
+          <dt><strong>Phone Number: </strong></dt>
+          <dd>{{phone_number}}</dd>
+          <dt><strong>Email: </strong></dt>
+          <dd>{{email}}</dd>
+          <dt><strong>Tags: </strong></dt>
+          <dd class='tags'>
+            {{#if tags}}
+            {{#each tags}}
+            <a href='#' class='tagLink' data-tag="{{this}}">{{this}}</a>
+            {{/each}}
+            {{else}}
+            No tags.
+            {{/if}}
+          </dd>
+          <div class='modifyLinks'>
+            <a data-method='edit' data-object-id='{{id}}' href="contacts/{{id}}">Edit</a>
+            <a data-method='delete' data-object-id='{{id}}' href="contacts/{{id}}">Delete</a>
+          </div>
+        </dl>
+      </fieldset>    
+    </li>     
+  </script>
+
+  <script id="defaultWelcome" type="text/x-handlebars">
+    <div id="contactDisplay">
+      {{#if contacts}}
+      <ul>
+        {{#each contacts}}
+          {{> contact}}
+        {{/each}}
+      </ul>  
+      {{else}}
+      <p>There are no contacts.</p>
+      {{/if}}  
+    </div>  
+  </script>
+
+  <script id="soloContact" type="text/x-handlebars">
+    <form id='contactForm{{action}}' data-object-id={{id}}>
+      <h2> {{action}} Contact </h2>
+      <dl>
+        <dd><label for='full_name'>Full Name: </label></dd>
+        <dt><input type='text' id='fullName' name='full_name' value='{{full_name}}'/></dt>
+        <dd><label for='email'>Email Address:  </label></dd>
+        <dt><input type='email' id='email' name='email' value='{{email}}'/></dt>
+        <dd><label for='phone_number'>Telephone Number: </label></dd>
+        <dt><input type='text' id ='phoneNumber' name='phone_number' value='{{phone_number}}' placeholder='123-456-7890'/></dt> 
+        <dd><label for='tags'>Tags: </label></dd>
+        <dt><input type='text' id='tags' name='tags' value='{{tags}}' placeholder='marketing, sales, etc...'/></dt>
+        <button type='submit' id='submit{{action}}'> Submit </button>
+        <a href='#' id='cancel{{action}}'>Cancel </a>
+      </dl>
+  </script>
+</head>
+<body>
+  <div id="topContainer">
+    <div id="defaultHeader">
+      <header>
+        <button id="defaultAdd">
+          <a href="#">Add Contact</a>
+        </button> 
+        <button id="home">
+          <a href="#">Home</a>
+        </button>
+        <input type="search" id="searchBar" placeholder="Search"/>
+      </header>  
+    </div>
+    <div id="welcomeContainer"></div></div>
+</body>
+</html>
